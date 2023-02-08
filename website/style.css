@@ -1,0 +1,145 @@
+:root{
+  --head-size:1em;
+  --input-width:35%;
+  --inputFont-size:1.1em;
+  --button-width:13%;
+}
+body{
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+#app{
+  height: 100vh;
+  background-image: url('sky.jpg');
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-rows: 10vh 40vh 1fr;
+}
+.headline{
+  background-color: #001849;
+  height: 10vh;
+  font-size: var(--head-size);
+}
+.form{
+  padding: 8vh 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form input{
+  color: white;
+  margin: 0px;
+  height: 5vh;
+  font-size: var(--inputFont-size);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 50%);
+  border: none;
+  width: var(--input-width);
+  border-radius: 35px;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  -ms-border-radius: 35px;
+  -o-border-radius: 35px;
+}
+.form #feelings{
+  margin: 3vh auto;
+}
+.form #error{
+  height: 4vh;
+  width: 22%;
+  background-color: #e91e63;
+  color: white;
+  text-align: center;
+  margin: 0px auto;
+  border-radius: 1px 0px 30px 30px;
+  display: none;
+}
+.form .show-error{
+  display: block!important
+}
+.form input::placeholder{
+  color: white;
+}
+.form input:focus{
+  outline: none;
+}
+.form button{
+  background-color: #001849;
+  width: var(--button-width);
+  height: 4.5vh;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.entry {
+  background-color: rgba(0, 0, 0, 40%);
+  height: 40vh;
+  width:70%;
+  margin:0 auto auto;
+  display: none;
+  color: black;
+  text-align: center;
+  font-size: 1.3em;
+  grid-template-areas: 
+    'title title title title title title'
+    'temp temp temp city city city'
+    'des des des date date date'
+    'con con con con con con';
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
+.entry .title{
+  grid-area: title;
+  height: 10%;
+  text-align: center;
+  margin-top: 10px;  
+}
+.entry #temp{
+  grid-area: temp;
+  /* width: 49%; */
+  /* padding: 10% 0; */
+  font-size: 3em;
+}
+.entry #country{
+  grid-area: city;
+  font-size: 3em;
+}
+#description{
+  grid-area: des;
+}
+.entry #date{
+  grid-area: date;
+}
+.entry #content{
+  grid-area: con;
+  overflow: auto;
+  font-size: 1.4em;
+}
+.show{
+  display: grid;
+} 
+@media (max-width:900px){
+  :root{
+    --head-size:2em !important;
+    --input-width:65vw;
+    --inputFont-size:1.8em !important;
+    --button-width:35%;
+  }
+  .headline h2 {
+    margin: auto;
+  }
+}
